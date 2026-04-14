@@ -17,7 +17,7 @@ const Gallery = () => {
     const fetchPosts = async () => {
       try {
         const res = await axios.get(`${API_BASE}/galleries/${slug}/posts`);
-        setPosts(res.rows || res.data); // 서버 응답 구조에 맞게 조정
+        setPosts(res.data.rows || res.data); // 서버 응답 구조에 맞게 조정
       } catch (err) {
         console.error('Failed to fetch posts', err);
       }
